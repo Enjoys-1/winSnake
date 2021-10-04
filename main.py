@@ -9,8 +9,21 @@ import random
 #TODO make snake head larger
 
 sqSize = 30
-#fps = 30  # 30 - nice and stable, 31 - 55 snake gets visually shorter and longer randomly 56 - 102 some windows don't render,
-          # 103+ almost no windows render
+cont = True
+while(cont):
+    print("Select difficulty: Slow , Medium, or Hard")
+    diffSelect = input().lower()
+    if(diffSelect == "s" or diffSelect == "slow"):
+        difficulty = 15
+        cont = False
+    elif(diffSelect == "m" or diffSelect == "medium"):
+        difficulty = 30
+        cont = False
+    elif(diffSelect == "h" or diffSelect == "hard"):
+        difficulty = 55
+        cont = False
+    else:
+        print("Unknown input, please try again.")
 
 def getSnakeDir(snake):
     if len(snake.keyQueue) > 0:
@@ -138,7 +151,7 @@ class Snake:
                 return
             else:
                 self.reset()
-        root.after(int(33.333333333333333), self.update)
+        root.after(int(1000 / difficulty), self.update)
 
 if __name__ == '__main__':
     # start collecting keyboard events
