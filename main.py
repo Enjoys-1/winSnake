@@ -9,7 +9,7 @@ import random
 #TODO make snake head larger
 
 sqSize = 30
-fps = 30  # 30 - nice and stable, 31 - 55 snake gets visually shorter and longer randomly 56 - 102 some windows don't render,
+#fps = 30  # 30 - nice and stable, 31 - 55 snake gets visually shorter and longer randomly 56 - 102 some windows don't render,
           # 103+ almost no windows render
 
 def getSnakeDir(snake):
@@ -138,7 +138,7 @@ class Snake:
                 return
             else:
                 self.reset()
-        root.after(int(1000 / fps), self.update)
+        root.after(int(33.333333333333333), self.update)
 
 if __name__ == '__main__':
     # start collecting keyboard events
