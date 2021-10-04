@@ -97,6 +97,7 @@ class Snake:
         a.focus()
         a.title("Apple")
         a.attributes("-toolwindow", True)
+        a.resizable(False, False)
         self.appleTop = a
         self.toplevels = collections.deque()
         # creating new windows has a short animation which makes the snake look kinda weird, so we need a buffer off screen
