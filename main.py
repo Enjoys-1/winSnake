@@ -115,7 +115,7 @@ class Snake:
             #check if snake collides with itself
             for x in range(1, len(self.body)):
                 if self.body[x] == self.head:
-                    self.reset()
+                    self.dead = True  # Use this instead of self.reset to trigger the nice death animation
                     break
             # to detect when the snake leaves the screen
             if not isRectInRect(vec(-1, -1), vec(root.winfo_screenwidth(), root.winfo_screenheight()),
